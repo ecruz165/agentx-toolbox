@@ -7,7 +7,16 @@
     "agentx-taskmaster": "./bin/agentx-taskmaster.js"
   },
   "main": "./dist/cli.js",
+  "files": [
+    "dist/",
+    "bin/",
+    "src/templates/"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
   "scripts": {
+    "prepublishOnly": "npm run build",
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",

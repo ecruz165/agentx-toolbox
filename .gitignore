@@ -40,3 +40,4 @@ packages/cli/internal/branding/branding.yaml
 .plans/
 .taskmaster/
 /CLAUDE.md
+/.claude/
