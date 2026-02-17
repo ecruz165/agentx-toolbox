@@ -4,13 +4,14 @@
   "description": "CLI-based project task generator with complexity scoring and auto-decomposition",
   "type": "module",
   "bin": {
-    "agentx-taskmaster": "./bin/agentx-taskmaster.js"
+    "taskmaster": "./bin/taskmaster.js"
   },
   "main": "./dist/cli.js",
   "files": [
     "dist/",
     "bin/",
-    "src/templates/"
+    "src/templates/",
+    "src/context/"
   ],
   "engines": {
     "node": ">=22"
@@ -22,8 +23,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:integration": "vitest run tests/integration/",
-    "test:e2e": "vitest run tests/e2e/",
-    "rebrand": "npx tsx scripts/rebrand.ts"
+    "test:e2e": "vitest run tests/e2e/"
   },
   "keywords": [
     "cli",
