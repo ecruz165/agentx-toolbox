@@ -1,1 +1,7 @@
 .idea/
+.plans/
+.screenshots/
+node_modules/
+dist/
+catalog.json
+*.tgz
