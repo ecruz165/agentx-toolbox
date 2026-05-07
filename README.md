@@ -9,7 +9,8 @@ through shared conventions and a common brand.
 | Package | What it does |
 |---|---|
 | [`@agentx/skillzkit`](apps/skillzkit) | Catalog of slash commands, agent skills, and multi-phase workflows for Claude Code. |
-| `@agentx/toolz` *(planned)* | Cross-platform install primitive — `ensureTool('git')` etc. See `agentx-toolz/toolz-implmentation-plan.md`. |
+| [`@agentx/toolz`](apps/toolz) | Cross-platform install primitive — `ensureTool('git')`, registry, doctor. |
+| [`@agentx/gitradar`](apps/gitradar) | Terminal TUI analytics for git contribution data. SQLite-backed, GitHub-enrichable. |
 | `@agentx/gittyup` *(planned)* | Git workflow tool. |
 
 Add new apps under `apps/<name>/`. Each app is its own npm package
