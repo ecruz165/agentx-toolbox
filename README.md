@@ -11,6 +11,8 @@ through shared conventions and a common brand.
 | [`@agentx/skillzkit`](apps/skillzkit) | Catalog of slash commands, agent skills, and multi-phase workflows for Claude Code. |
 | [`@agentx/toolz`](apps/toolz) | Cross-platform install primitive — `ensureTool('git')`, registry, doctor. |
 | [`@agentx/gitradar`](apps/gitradar) | Terminal TUI analytics for git contribution data. SQLite-backed, GitHub-enrichable. |
+| [`@agentx/pritty`](apps/pritty) | AI-powered commit and PR CLI — categorize staged files, generate commits, open PRs. |
+| [`@agentx/taskmaster`](apps/taskmaster) | CLI project task generator — parse plans, score complexity, decompose into hierarchies. |
 | `@agentx/gittyup` *(planned)* | Git workflow tool. |
 
 Add new apps under `apps/<name>/`. Each app is its own npm package
