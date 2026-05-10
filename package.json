@@ -11,12 +11,19 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "test": "npm run test --workspaces --if-present",
-    "test:watch": "npm run test:watch --workspace=@agentx/skillzkit",
-    "catalog": "npm run catalog --workspace=@agentx/skillzkit",
+    "test:watch": "npm run test:watch --workspace=@ecruz165/skillzkit",
+    "catalog": "npm run catalog --workspace=@ecruz165/skillzkit",
     "skillzkit": "tsx apps/skillzkit/bin/cli.ts"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "bun": ">=1.3"
+  },
+  "overrides": {
+    "commander": "^14.0.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.5"
   },
   "repository": {
     "type": "git",
