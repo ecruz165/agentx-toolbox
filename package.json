@@ -4,30 +4,41 @@
   "description": "AgentX Toolbox — a coordinated set of CLI tools for the AgentX ecosystem.",
   "private": true,
   "type": "module",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "packageManager": "pnpm@9.15.9",
   "scripts": {
-    "build": "npm run build --workspaces --if-present",
-    "test": "npm run test --workspaces --if-present",
-    "test:watch": "npm run test:watch --workspace=@ecruz165/skillzkit",
-    "catalog": "npm run catalog --workspace=@ecruz165/skillzkit",
-    "skillzkit": "tsx apps/skillzkit/bin/cli.ts"
+    "build": "pnpm -r run build",
+    "test": "pnpm -r run test",
+    "test:watch": "pnpm --filter @ecruz165/skillzkit run test:watch",
+    "catalog": "pnpm --filter @ecruz165/skillzkit run catalog",
+    "skillzkit": "tsx apps/skillzkit/src/cli.ts",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm -r run build && changeset publish",
+    "lint": "biome lint .",
+    "format": "biome format --write .",
+    "check": "biome check .",
+    "check:fix": "biome check --write ."
   },
   "engines": {
     "node": ">=20",
     "bun": ">=1.3"
   },
-  "overrides": {
-    "commander": "^14.0.3",
-    "tsup": "^8.5.1",
-    "typescript": "^5.9.3",
-    "vitest": "^4.1.5"
+  "pnpm": {
+    "overrides": {
+      "commander": "^14.0.3",
+      "tsup": "^8.5.1",
+      "typescript": "^5.9.3",
+      "vitest": "^4.1.5"
+    }
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ecruz165/agentx-toolbox.git"
   },
-  "license": "UNLICENSED"
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@biomejs/biome": "2.4.15",
+    "@changesets/cli": "^2.31.0",
+    "pnpm": "^9.15.9"
+  }
 }

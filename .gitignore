@@ -8,3 +8,5 @@ dist/
 catalog.json
 **/catalog.json
 *.tgz
+.DS_Store
+**/.DS_Store
