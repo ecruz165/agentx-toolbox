@@ -465,6 +465,9 @@ importers:
       '@types/react':
         specifier: ^19.0.0
         version: 19.2.14
+      bun:
+        specifier: ^1.3.13
+        version: 1.3.13
       react:
         specifier: ^19.2.0
         version: 19.2.6
