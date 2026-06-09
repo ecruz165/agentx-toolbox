@@ -39,6 +39,14 @@ describe('loadConfig', () => {
     expect(cfg.voiceChannelIds).toEqual([SF, other]);
   });
 
+  it('treats an empty env var as unset (does not override / fail validation)', () => {
+    // `.env` lines like `TRACKED_ROLE_ID=` must not set '' — that would fail the
+    // optional snowflake check instead of being ignored.
+    const cfg = loadConfig(tmp(), validEnv({ TRACKED_ROLE_ID: '', TIMEZONE: '  ' }));
+    expect(cfg.trackedRoleId).toBeUndefined();
+    expect(cfg.timezone).toBe('America/New_York'); // blank → default, not ''
+  });
+
   it('rejects a missing token', () => {
     const { DISCORD_TOKEN: _omit, ...env } = validEnv();
     expect(() => loadConfig(tmp(), env)).toThrow(ConfigError);
