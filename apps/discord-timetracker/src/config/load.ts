@@ -42,7 +42,11 @@ export function loadDotEnv(cwd = process.cwd()): void {
       (value.startsWith('"') && value.endsWith('"')) ||
       (value.startsWith("'") && value.endsWith("'"))
     ) {
-      value = value.slice(1, -1);
+      value = value.slice(1, -1); // quoted: keep contents verbatim
+    } else {
+      // Unquoted: strip an inline ` #…` comment (e.g. `TIMEZONE=America/New_York # tz`).
+      const comment = value.search(/\s#/);
+      if (comment !== -1) value = value.slice(0, comment).trimEnd();
     }
     process.env[key] = value;
   }
